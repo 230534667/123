@@ -1,0 +1,109 @@
+{
+  "name": "qwerty-learner",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "@craco/craco": "^6.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-regular-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@headlessui/react": "^0.2.0",
+    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/lodash": "^4.14.168",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "autoprefixer": "^9",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
+    "lodash": "^4.17.20",
+    "postcss": "^7",
+    "prettier": "^2.2.1",
+    "react": "^17.0.1",
+    "react-app-polyfill": "^2.0.0",
+    "react-dom": "^17.0.1",
+    "react-hotkeys-hook": "^3.0.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-timer-hook": "^2.0.7",
+    "react-use": "^17.1.0",
+    "source-map-explorer": "^2.5.2",
+    "swr": "^0.4.1",
+    "typescript": "^4.0.3",
+    "use-sound": "^2.0.1",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "cross-env CI=false craco build",
+    "test": "craco test",
+    "lint": "eslint .",
+    "eject": "react-scripts eject",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
+  },
+  "eslintConfig": {
+    "plugins": [
+      "react",
+      "react-hooks",
+      "prettier"
+    ],
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:prettier/recommended"
+    ],
+    "ignorePatterns": [
+      "build/*"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "prettier/prettier": "error"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && eslint . --fix"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "prettier/prettier": [
+    "error",
+    {
+      "endOfLine": "auto"
+    }
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.1.7",
+    "cross-env": "^7.0.3",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
+  }
+}
